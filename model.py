@@ -2,9 +2,10 @@ from langchain_community.chat_models import ChatOpenAI
 from typing import Optional, Any
 import os
 
-os.environ["OPENROUTER_API_KEY"] = "<your key here>"
+os.environ["OPENROUTER_API_KEY"] = "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"
 
 class ChatModel(ChatOpenAI):
+   
     """
     Creates a chat model from openrouter.ai using the OpenAI API
     """
