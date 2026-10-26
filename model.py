@@ -23,7 +23,7 @@ class ChatModel(ChatOpenAI):
             **kwargs
         )
 
-def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
+def get_model(model_name: str = "openrouter/free") -> ChatModel:
     """
     Gets a reference to a model
     
@@ -39,6 +39,9 @@ def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
     )
 
 if __name__ == "__main__":
+    model = get_model()
+    response = model.invoke("What are some plays by Tawfiq al-Hakim?")
+    print(response.content)
 # when run as a script, run some tests to demonstrate capabilities
 #    model = get_model()
 #    from langchain_core.messages import HumanMessage, SystemMessage
