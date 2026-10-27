@@ -2,10 +2,9 @@ from langchain_community.chat_models import ChatOpenAI
 from typing import Optional, Any
 import os
 
-os.environ["OPENROUTER_API_KEY"] = "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"
+os.environ["OPENROUTER_API_KEY"] = "<your key here>"
 
 class ChatModel(ChatOpenAI):
-   
     """
     Creates a chat model from openrouter.ai using the OpenAI API
     """
@@ -23,7 +22,7 @@ class ChatModel(ChatOpenAI):
             **kwargs
         )
 
-def get_model(model_name: str = "openrouter/free") -> ChatModel:
+def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
     """
     Gets a reference to a model
     
@@ -39,9 +38,6 @@ def get_model(model_name: str = "openrouter/free") -> ChatModel:
     )
 
 if __name__ == "__main__":
-    model = get_model()
-    response = model.invoke("What are some plays by Tawfiq al-Hakim?")
-    print(response.content)
 # when run as a script, run some tests to demonstrate capabilities
 #    model = get_model()
 #    from langchain_core.messages import HumanMessage, SystemMessage
